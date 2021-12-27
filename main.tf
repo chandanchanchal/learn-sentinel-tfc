@@ -21,6 +21,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "ubuntu" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.instance_type
+  availability_zone = "us-east-1a"
 
   tags = {
     Name = var.instance_name
